@@ -2,3 +2,7 @@
 learning_log/__pycache__/
 
 learning_logs/__pycache__/
+
+task_18_4/pizza_restaurant/pizza_restaurant/__pycache__/
+
+*.pyc
