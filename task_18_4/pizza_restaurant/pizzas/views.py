@@ -14,6 +14,6 @@ def pizzas(request):
 def pizza(request, pizza_id):
     """Отображение всех топпингов."""
     pizza = Pizza.objects.get(id=pizza_id)
-    topping = pizza.entry_set.order_by('name')
+    topping = pizza.topping_set.order_by('text')
     context = {"pizzas": pizza, "topping": topping}
-    return render (request, 'pizza.html', context)
+    return render (request, 'pizzas/pizza.html', context)
