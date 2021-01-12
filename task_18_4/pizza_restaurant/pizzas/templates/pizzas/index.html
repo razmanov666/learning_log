@@ -1,1 +1,6 @@
-<p><b>Pizzas</b></p>
+{% extends 'pizzas/base.html' %}
+
+{% block content %}
+    <a href={% url 'index' %}> Home page</p> - 
+    <p>Pizzas</p>
+{% endblock content %}
