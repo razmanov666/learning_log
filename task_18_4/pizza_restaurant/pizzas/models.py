@@ -14,6 +14,7 @@ class Topping(models.Model):
     """Info about pizza's toppings"""
     pizza = models.ForeignKey(Pizza,on_delete=models.CASCADE)
     text = models.CharField(max_length=30)
+    text2 = ''
 
     def __str__(self):
         """Возвращает строковое представление модели."""
