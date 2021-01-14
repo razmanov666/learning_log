@@ -42,7 +42,7 @@ def new_topic(request):
     context = {"form": form}
     return render(request, 'learning_logs/new_topic.html', context)
 
-def new_entry(request):
+def new_entry(request, topic_id):
     """Создает новую запись для темы."""
     topic = Topic.objects.get(id=topic_id)
 
@@ -56,7 +56,7 @@ def new_entry(request):
             new_entry = form.save(commit=False)
             new_entry.topic = topic
             new_entry.save()
-            return HttpResponseRedirect(reverse('topic', topic_id))
+            return HttpResponseRedirect(reverse('topic', args=[topic_id]))
     
-    context = {'topic':topic, 'form':form}
+    context = {'topic': topic, 'form':form}
     return render(request, 'learning_logs/new_entry.html', context)
