@@ -1,6 +1,13 @@
+<link rel="stylesheet" href="learning_logs/base.css">
 <p>
-    <a href="{% url 'index' %}">Learning Log</a> -
-    <a href="{% url 'topics' %}">Topics</a> - 
-    <a href= {% url 'hello' %} >Hello</a>
+  <a href="{% url 'index' %}">Learning Log</a> -
+  <a href="{% url 'topics' %}">Topics</a> 
+    {% if user.is_auntificated %}
+      <p>Hello, {{user.username}}</p>
+      <button action=logout type="submit">Log in</button>
+    {% else %}
+      <button action=login type="submit">Logout</button>
+    {% endif %}
+
 </p>
 {% block content %}{% endblock content %}
