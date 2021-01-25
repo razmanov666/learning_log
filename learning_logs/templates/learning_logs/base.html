@@ -1,0 +1,13 @@
+<style>
+a {
+    text-decoration: none;
+    color: rgb(0, 50, 70);
+    font-style:italic;
+}
+</style>
+<p>
+    <a href="{% url 'index' %}">Learning Log</a> -
+    <a href="{% url 'topics' %}">Topics</a> - 
+    <a href="{% url 'hello' %}" >Hello</a>
+</p>
+{% block content %}{% endblock content %}
