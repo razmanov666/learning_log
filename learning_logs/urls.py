@@ -1,13 +1,5 @@
 """Определяет схемы URL для learning_logs"""
 
-from django.contrib import admin
-<<<<<<< HEAD
-from django.urls import path, re_path
-from . import views
-urlpatterns = [
-    # Домашняя страница
-    re_path(r"^$", views.index, name="index"),
-=======
 from django.urls import path, re_path, include
 from . import views
 urlpatterns = [
@@ -26,5 +18,4 @@ urlpatterns = [
     # Страница для редактирования записей.
     re_path(r"^edit_entry/(?P<entry_id>\d+)/$", views.edit_entry, 
                                                 name='edit_entry'),
->>>>>>> modifications
 ]

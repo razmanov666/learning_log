@@ -1,11 +1,4 @@
 from django.shortcuts import render
-
-<<<<<<< HEAD
-# Create your views here.
-def index(request):
-    """Домашняя страница приложения Learning log."""
-    return render(request, "learning_logs/index.html")
-=======
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -84,4 +77,3 @@ def edit_entry(request, entry_id):
     
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'learning_logs/edit_entry.html', context)
->>>>>>> modifications
