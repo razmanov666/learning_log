@@ -1,13 +1,14 @@
-<style>
-a {
-    text-decoration: none;
-    color: rgb(0, 50, 70);
-    font-style:italic;
-}
-</style>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/base.css' %}">
 <p>
-    <a href="{% url 'index' %}">Learning Log</a> -
-    <a href="{% url 'topics' %}">Topics</a> - 
-    <a href="{% url 'hello' %}" >Hello</a>
+  <a href="{% url 'index' %}">Learning Log</a> -
+  <a href="{% url 'topics' %}">Topics</a> -
+  <a href="{% url 'topics' %}">Topics</a> -
+  {% if user.is_authenticated %}
+    Hello, {{ user.username }}.
+    <button><a href="{% url 'logout'%}">Log Out</a></button>
+  {% else %}
+    <button><a href="{% url 'login'%}">Log In</a></button>
+  {% endif %}
 </p>
 {% block content %}{% endblock content %}

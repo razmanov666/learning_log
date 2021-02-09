@@ -1,0 +1,8 @@
+a, button {
+    text-decoration: none;
+    color: rgb(1, 27, 37);
+    font-style:italic;
+}
+body{
+    background-color: rgb(174, 178, 243);
+}
