@@ -6,3 +6,7 @@ a, button {
 body{
     background-color: rgb(174, 178, 243);
 }
+#container {
+    display: flex;
+    flex-direction: column;
+}
