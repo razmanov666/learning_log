@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
@@ -18,6 +18,6 @@ def register(request):
                                               password=request.POST['password1'],
                                               confirm_password=request.POST['password2'])
             login(request, authenticated_user)
-            return HttpResponseRedirect(reverse('index'))
+            return redirect(reverse('index'))
             context = {'form': form}
             return render(request, 'users/register.html', context)
