@@ -1,7 +1,9 @@
 {% load static %}
 {% load bootstrap4 %}
+
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +11,7 @@
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
   </head>
+
   <body>
     
     <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
@@ -22,7 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'learning_logs:index' %}">Topics</a>
+            <a class="nav-link" href="{% url 'learning_logs:topics' %}">Topics</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -31,7 +34,7 @@
               <span class="navbar-text">Hello, {{user.username}}.</span>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'users:logout' %}">Log out</a>
+              <a class="nav-link" href="{% url 'users:mylogout' %}">Log out</a>
             </li>
           {% else %}
             <li class="nav-item">
@@ -55,5 +58,6 @@
     </main>
 
   </body>
+
 </html>
   <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/my_base.css' %}">
