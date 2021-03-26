@@ -25,19 +25,19 @@ SECRET_KEY = 'll*s$qkpl)dl=xc-&x4j@lt%k^7+%d=00di^ms5%1p2e4w(nb8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    # Сторонние приложения
-    'bootstrap4',
+    
 
      # Мои приложения
     'learning_logs',
     'users',
-
+    # Сторонние приложения
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,11 +1,6 @@
 """Определяет схемы URL для learning_logs"""
-
-<<<<<<< HEAD
-from django.urls import path, re_path, include
-=======
 from django.contrib import admin
 from django.urls import include, path
->>>>>>> modifications
 from . import views
 
 app_name = 'learning_logs'

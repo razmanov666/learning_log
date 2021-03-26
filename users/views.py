@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm
+from .forms import RegisterForm
 
 def register(request):
     """Регистрирует нового пользователя."""

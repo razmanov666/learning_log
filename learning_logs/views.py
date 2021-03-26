@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-=======
 from django.shortcuts import render, redirect
 
 from django.http import HttpResponseRedirect, request, Http404
->>>>>>> modifications
 from django.urls import reverse
 
 from .models import Topic, Entry
