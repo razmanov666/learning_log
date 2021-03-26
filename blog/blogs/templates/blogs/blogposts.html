@@ -1,14 +1,19 @@
 {% extends 'blogs/base.html' %}
+
+{% block page_header %}
+  <h3>Blogpost</h3>
+{% endblock page_header %}
+
 {% block content %}
   <a>All posts:</a>
   <ul>
     {% for blogpost in blogposts %}
-      <li>
-        <a href="{% url 'blogposts'%}"> 
-          <h3>{{blogpost.title}}</h3>
-          <p>{{blogpost.text|linebreaks}}</p>
-          <p>{{blogpost.date_added|date:'M d, Y H:i'}}</p> 
-        </a>
+      <li> 
+        <h3>{{blogpost.title}}</h3>
+        <p>{{blogpost.text|linebreaks}}</p>
+        <p>{{blogpost.date_added|date:'M d, Y H:i'}}
+          <a href="{% url 'blogs:edit_post' blogpost.id%}"> Edit post</a>
+        </p> 
       </li>
       {% empty %}
         <li>No posts have been added yet.</li>
