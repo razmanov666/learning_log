@@ -2,21 +2,19 @@
 {% load bootstrap4 %}
 
 {% block page_header %}
-  <h3>Add new entry</h3>
+  <h3>Log in to your account.</h3>
 {% endblock page_header %}
 
 {% block content %}
-  <p>In topic <a href=" {% url 'learning_logs:topic' topic.id%} ">{{ topic }}. </a></p>
-
-  <p>Text entry:</p>
-  <form action="{% url 'learning_logs:new_entry' topic.id%}" method="post">
+  <form action="{% url 'users:login' %}" method="post" class="form">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% buttons %}
-      <button type="submit" class="btn btn-primary" >Add entry</button>
+      <button type="submit" class="btn btn-primary" >Log in</button>
     {% endbuttons %}
+
     <input type="hidden" name="next"
       value="{% url 'learning_logs:index' %}" />
+      
   </form>
-
 {% endblock content %}

@@ -1,24 +1,25 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm
-
 
 def register(request):
     """Регистрирует нового пользователя."""
-    if request.method != "POST":
-        # Display blank registration form.
+    if request.method != 'POST':
+        # Выводит пустую форму регистрации.
         form = UserCreationForm()
+        return render(request, 'registration/register.html', {'form':form})
     else:
         # Обработка заполненной формы.
         form = UserCreationForm(data=request.POST)
-        if form.is_valid:
+        if form.is_valid():
             new_user = form.save()
-            # Выполнение входа и перенаправление на домашнюю страничку.
-            authenticated_user = authenticate(username=new_user.username, 
-                                              password=request.POST['password1'])
-            login(request, authenticated_user)
-            return HttpResponseRedirect(reverse('index'))
-            context = {'form': form}
-            return render(request, 'users/register.html', context)
+            # Выполнение входа и перенаправление на домашнюю страницу.
+            login(request, new_user)
+            return redirect('learning_logs:index')
+    # Вывести пустую или недействительную форму.
+    context = {'form': form}
+    return render(request, 'registration/register.html', context)
+
+def mylogout(request):
+    logout(request)
+    return redirect('learning_logs:index')

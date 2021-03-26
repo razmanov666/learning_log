@@ -31,16 +31,20 @@ ALLOWED_HOSTS = ['0.0.0.0']
 # Application definition
 
 INSTALLED_APPS = [
+    # Сторонние приложения
+    'bootstrap4',
+
+     # Мои приложения
+    'learning_logs',
+    'users',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    # Мои приложения
-    'learning_logs',
-    'users',
+      
 ]
 
 MIDDLEWARE = [
@@ -122,3 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = 'learning_logs/static/'
+
+# My settings
+LOGIN_URL = '/users/login'
