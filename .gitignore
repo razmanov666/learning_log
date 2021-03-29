@@ -1,11 +1,3 @@
-
-learning_log/__pycache__/
-
-learning_logs/__pycache__/
-
-*.pyc
-<<<<<<< HEAD
-=======
-
-task_18_4/pizza_restaurant/
->>>>>>> modifications
+ll_env/
+__pycache__/
+*.sqlite3

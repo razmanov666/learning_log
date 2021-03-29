@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,7 +34,7 @@ ALLOWED_HOSTS = ['localhost']
 INSTALLED_APPS = [
     
 
-     # Мои приложения
+    # Мои приложения
     'learning_logs',
     'users',
     # Сторонние приложения
@@ -128,4 +129,7 @@ USE_TZ = True
 STATIC_URL = 'learning_logs/static/'
 
 # My settings
-LOGIN_URL = '/users/login'
+LOGIN_URL = 'users:login'
+
+# Настройка Heroku
+django_heroku.settings(locals())
