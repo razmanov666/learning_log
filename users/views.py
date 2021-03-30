@@ -8,7 +8,6 @@ def register(request):
     if request.method != 'POST':
         # Выводит пустую форму регистрации.
         form = UserCreationForm()
-        return render(request, 'registration/register.html', {'form':form})
     else:
         # Обработка заполненной формы.
         form = UserCreationForm(data=request.POST)
